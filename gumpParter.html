@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/variable/pretendardvariable.css");
+    *{
+        font-family: Pretendard Variable, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif !important;
+        margin:0;
+        box-sizing: border-box
+    }
+
+    nav{
+        display: flex;
+        padding: 20px 16px;
+        background: #f0f0f0;
+        justify-content: space-between;
+    }
+
+    nav .menu{
+        display: flex;
+        gap: 10px;
+    }
+
+    /* footer */
+    footer{
+        background: #c8c8c8;
+        padding: 40px 80px;
+        display: grid;
+        gap: 20px;
+    }
+    footer > div:first-child{
+        display: flex;
+        justify-content: space-between;
+    }
+    footer > div:first-child > div{
+        height: 80px;
+        background:#999;
+        width: 300px;
+    }
+    footer > div:last-child{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    footer > div:last-child > div{
+        height: 80px;
+        background:#999;
+        width: 300px;
+    }
+
+
+    body > div{
+        display: grid;
+        padding: 40px 0 80px 0;
+        gap: 40px;
+    }
+    body > div > section{
+        background: #fff;
+        height: 600px;
+        padding: 40px;
+    }
+
+    body > div > section > h2{
+        margin-bottom: 10px;
+    }
+    body > div section article{
+        background: #FFFBED;
+        border: 2px solid #FFF6D9;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        padding: 40px;
+    }
+</style>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="./index.html">펫트너</a>
+        </div>
+        <div class="menu">
+            <a href="./gump.html">검프 2.0</a>
+            <a href="./app.html">펫시팅/방문미용</a>
+        </div>
+    </nav>
+    <div>
+        <section>
+            <h2>
+                Introduce
+            </h2>
+            <article>
+                <h3>
+                    건강 검진 리포트 작성이 편해집니다.
+                </h3>
+            </article>
+        </section>
+        <section>
+            <h2>
+                검프 2.0 장점 1
+            </h2>
+            <article>
+                <h3>
+                    검프 2.0으로 동물병원의 업무 효율성을 높일 수 있습니다.
+                </h3>
+                <h4>퀄리티 높은 리포트</h4>
+                <h4>고객 만족도 증가</h4>
+                <h4>시간 절약 & 비용 절감</h4>
+                <h4>검진,진료 증가 매출 증가</h4>
+            </article>
+        </section>
+        <section>
+            <h2>검프 2.0 장점 2</h2>
+            <article>
+                <h3>
+                    검프 2.0은 병원의 다양한 상황에 맞게 세팅 가능합니다.
+                </h3>
+                <h4>고유의 예약 URL 생성</h4>
+                <h4>건진 스케줄, 검진 프로그램 세팅</h4>
+                <h4>코멘트 변경 가능</h4>
+                <h4>검진항목 추가 가능</h4>
+                <h4>스마트폰, PC를 이용한 검진 결과 입력</h4>
+            </article>
+        </section>
+        <section>
+            <h2>검프 2.0 제작 배경</h2>
+            <article>
+                <h3>
+                    GUMP 2.0 은 이렇게 만들어졌습니다.
+                </h3>
+                <h4>1,000여 마리의 건강 검진을 진행하면서 프로그램의 완성도를 높였습니다.</h4>
+                <h4>임상에 종사하고 있는 20여명의 수의학 석박사들과 10여명의 개발팀, 10여곳의 동물병원이 제작에 참여하였습니다.</h4>
+                <h4>'검프 2.0'은 1년여 동안의 끊임없는 열정으로 실제 임상 현장에 적합한 프로그램으로 제작하였습니다.</h4>
+            </article>
+        </section>
+        <section>
+            <h2>
+                검프 파트너 신청
+            </h2>
+            <article>
+                <label for="name">이름</label>
+                <input id="name" type="text" />
+                <label for="tel">연락처</label>
+                <input id="tel" type="text" />
+                <label for="email">이메일</label>
+                <input id="email" type="text" />
+            </article>
+        </section>
+    </div>
+    <footer>
+        <div>
+            <div>회사정보</div>
+        </div>
+        <div>
+            <div>
+                <a>개인정보 처리방침</a>
+                <a href="./petsitter.html">펫시터 지원</a>
+                <a href="./gumpParter.html">검프 파트너 센터</a>
+            </div>
+        </div>
+        <div>
+            <div>
+                sns
+            </div>
+            <div>고객센터</div>
+        </div>
+    </footer>
+</body>
+</html>

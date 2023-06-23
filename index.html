@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/variable/pretendardvariable.css");
+    *{
+        font-family: Pretendard Variable, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif !important;
+        margin:0;
+        box-sizing: border-box;
+    }
+
+    nav{
+        display: flex;
+        padding: 20px 16px;
+        background: #f0f0f0;
+        justify-content: space-between;
+    }
+
+    nav .menu{
+        display: flex;
+        gap: 10px;
+    }
+
+    .company-desc{
+        display: grid;
+        padding: 40px 0 80px 0;
+        gap: 40px;
+    }
+    .company-desc > section{
+        background: #fff;
+        height: 600px;
+        padding: 40px;
+    }
+
+    .company-desc > section > h2{
+        margin-bottom: 10px;
+    }
+    .company-desc section article{
+        background: #FFFBED;
+        border: 2px solid #FFF6D9;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        padding: 40px;
+    }
+
+    section.increased-buisness > article{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    section.increased-buisness > article > div:first-child{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 20px;
+    }
+
+    section.increased-buisness > article > div:last-child{
+        background:#E8F8FF;
+        height: 100%;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    section.services > article{
+        gap: 40px;
+    }
+
+    section.services > article > div{
+        background:#E8F8FF;
+        width: 100%;
+        height: 50%;
+        display: grid;
+        grid-template-columns: 30% 1fr;
+        padding: 30px;
+    }
+
+    section.news > article{
+        gap: 20px;
+    }
+
+    section.news > article > div{
+        background:#E8F8FF;
+        width: 100%;
+        padding: 30px;
+    }
+
+
+    /* footer */
+    footer{
+        background: #c8c8c8;
+        padding: 40px 80px;
+        display: grid;
+        gap: 20px;
+    }
+    footer > div:first-child{
+        display: flex;
+        justify-content: space-between;
+    }
+    footer > div:first-child > div{
+        height: 80px;
+        background:#999;
+        width: 300px;
+    }
+    footer > div:last-child{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    footer > div:last-child > div{
+        height: 80px;
+        background:#999;
+        width: 300px;
+    }
+</style>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="./index.html">펫트너</a>
+        </div>
+        <div class="menu">
+            <a href="./gump.html">검프 2.0</a>
+            <a href="./app.html">펫시팅/방문미용</a>
+        </div>
+    </nav>
+    <div class="company-desc">
+        <section class="Introduce">
+            <h2>Introduce</h2>
+            <article>
+                <h3>
+                    Love your Pet, Live your Life
+                    <br>더 건강한 반려동물 시장을 개척해나가는, 대한민국 1등 반려동물 플랫폼 펫트너 입니다.
+                </h3>
+            </article>
+        </section>
+        <section class="increased-buisness">
+            <h2>회사 성장 / 성과</h2>
+            <article>
+                <div>
+                    <h3>팻트너는<br>반려동물 산업의<br>새로운 역사를 쓰고 있습니다.</h3>
+                    <div>
+                        <h4>라이프스타일 슈퍼앱</h4>
+                        <p>앱 다운로드 0,000 이상</p>
+                        <h4>펫트너의 서비스와 함께한 반려동물</h4>
+                        <p>0,000마리 이상, 매달 00% 상승</p>
+                        <h4>검프 2.0을 사용하는 수의사</h4>
+                        <p>매달 00% 상승</p>
+                    </div>
+                </div>
+                <div>
+                    그래프 / 통계 이미지
+                </div>
+            </article>
+        </section>
+        <section class="services">
+            <h2>서비스 간략 소개</h2>
+            <article>
+                <div>
+                    <h3>검프 2.0</h3>
+                    <p>검프 2.0 에 대한 간략한 설명</p>
+                </div>
+                <div>
+                    <h3>돌봄 미용</h3>
+                    <p>돌봄 미용 펫트너 앱에 대한 간략한 설명</p>
+                </div>
+            </article>
+        </section>
+        <section class="news">
+            <h2>언론보도</h2>
+            <article>
+                <div>
+                    <h3>기사이름</h3>
+                </div>
+                <div>
+                    <h3>기사이름</h3>
+                </div>
+                <div>
+                    <h3>기사이름</h3>
+                </div>
+                <div>
+                    <h3>기사이름</h3>
+                </div>
+            </article>
+        </section>
+    </div>
+    <footer>
+        <div>
+            <div>회사정보</div>
+        </div>
+        <div>
+            <div>
+                <a>개인정보 처리방침</a>
+                <a href="./petsitter.html">펫시터 지원</a>
+                <a href="./gumpParter.html">검프 파트너 센터</a>
+            </div>
+        </div>
+        <div>
+            <div>
+                sns
+            </div>
+            <div>고객센터</div>
+        </div>
+    </footer>
+</body>
+</html>
