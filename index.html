@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <style>
     @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/variable/pretendardvariable.css");
-    *{
+    *:not(i){
         font-family: Pretendard Variable, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif !important;
         margin:0;
         box-sizing: border-box;
+        letter-spacing: -0.04em;
+        color: #101010;
     }
+
 
     nav{
         display: flex;
@@ -40,7 +45,6 @@
         margin-bottom: 10px;
     }
     .company-desc section article{
-        background: #FFFBED;
         border: 2px solid #FFF6D9;
         height: 100%;
         display: flex;
@@ -51,29 +55,6 @@
         padding: 40px;
     }
 
-    section.increased-buisness > article{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    section.increased-buisness > article > div:first-child{
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 20px;
-    }
-
-    section.increased-buisness > article > div:last-child{
-        background:#E8F8FF;
-        height: 100%;
-        width: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
     section.services{
         height: 700px;
     }
@@ -81,7 +62,6 @@
 
     section.services > article{
         gap: 40px;
-        background: #f6f6f6;
     }
 
     section.services > article > div{
@@ -91,7 +71,7 @@
         position: relative;
     }
 
-    section.services > article > div p{
+    section.services > article > div > div{
         position: absolute;
         padding: 14px;
         font-size: 18px;
@@ -99,86 +79,77 @@
         z-index: 2;
     }
 
-    section.services > article > div > p:nth-child(1){
+    section.services > article > div > div.health{
+        background: #E8F8FF;
+        border: 1px solid #00AAFF;
+    }
+
+    section.services > article > div > div.pet-sitter{
+        background: #FFFBED;
+        border: 1px solid #FFC107;
+    }
+
+    section.services > article > div > div:nth-child(1){
         top: 0;
         left: 0;
-        background: #E8F8FF;
-        color: #00AAFF;
-        border: 1px solid #00AAFF;
         border-radius: 4px;
     }
 
-    section.services > article > div > p:nth-child(2){
+    section.services > article > div > div:nth-child(2){
         top: 60px;
         left: 20px;
-        color: #FFC107;
-        background: #FFFBED;
-        border: 1px solid #FFC107;
         border-radius: 4px;
 
     }
 
-    section.services > article > div > p:nth-child(3){
+    section.services > article > div > div:nth-child(3){
         top: 20px;
         right: 20px;
-        color: #6ccd00;
-        background: #e7ffe7;
-        border: 1px solid #6ccd00;
         border-radius: 4px;
     }
 
-    section.services > article > div > p:nth-child(4){
+    section.services > article > div > div:nth-child(4){
         bottom: 0px;
         right: 20px;
-        background: #E8F8FF;
-        color: #00AAFF;
-        border: 1px solid #00AAFF;
         border-radius: 4px;
     }
     
-    section.services > article > div > p:nth-child(5){
+    section.services > article > div > div:nth-child(5){
         bottom: 20px;
         left: 20px;
-        color: #FFC107;
-        background: #FFFBED;
-        border: 1px solid #FFC107;
         border-radius: 4px;
     }
     
-    section.services > article > div > p:nth-child(6){
+    section.services > article > div > div:nth-child(6){
         bottom: 70px;
         right: 0px;
-        background: #E8F8FF;
-        color: #00AAFF;
-        border: 1px solid #00AAFF;
         border-radius: 4px;
     }
 
-    section.services > article > div > p:nth-child(7){
+    section.services > article > div > div:nth-child(7){
         left: 0px;
         bottom: 80px;
-        color: #FFC107;
-        background: #FFFBED;
-        border: 1px solid #FFC107;
         border-radius: 4px;
     }
 
-    section.services > article > div > p:nth-child(8){
+    section.services > article > div > div:nth-child(8){
         right: 0px;
         top: 80px;
-        color: #FFC107;
-        background: #FFFBED;
-        border: 1px solid #FFC107;
         border-radius: 4px;
     }
 
-    section.services > article > div > p:nth-child(9){
+    section.services > article > div > div:nth-child(9){
         right: 0px;
         bottom: 140px;
-        color: #FFC107;
-        background: #FFFBED;
-        border: 1px solid #FFC107;
         border-radius: 4px;
+    }
+
+    section.services > article > div > div:not(.main-text){
+        cursor:pointer;
+    }
+
+    section.services > article > div > div:not(.main-text) p:last-child{
+        display: none;
     }
 
     section.services > article > div > div.main-text{
@@ -189,18 +160,22 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-    }
-
-    section.services > article > div > div.main-text{
         font-size: 40px;
         padding-bottom: 110px;
         z-index: 1;
+        text-align: center;
+        gap: 8px;
+    }
+
+    section.services > article > div > div.main-text h4{
+        font-size: 28px;
     }
 
     
 
     section.news > article{
         gap: 20px;
+        height: unset;
     }
 
     section.news > article > div{
@@ -208,6 +183,229 @@
         width: 100%;
         padding: 30px;
     }
+
+    
+
+    section.gump-desc{
+        height: unset;
+    }
+
+    section.gump-desc > article{
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 80px;
+        position: relative;
+        gap: 80px;
+    }
+
+    section.gump-desc > article > div.title{
+        display: flex;
+        font-size: 18px;
+        align-items: center;
+        gap: 8px;
+    }
+
+    section.gump-desc > article .mockup-image{
+        background: #fff;
+        width: 320px;
+        height: 580px;
+        border-radius: 12px;
+        box-shadow: 1px 1px 20px #00000010;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #bbb;
+    }
+
+
+    section.gump-desc > article > div:not(.title){
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    section.gump-desc > article > div:not(.title) > div:first-child div.text{
+        font-size: 24px;
+        padding-top: 120px;
+        font-weight: 500;
+        line-height: 1.8;
+    }
+
+    section.gump-desc > article > div:not(.title) > div:first-child div.text a{
+        display: block;
+        margin-top: 18px;
+        font-size: 18px;
+        color: #555;
+        padding: 10px;
+        width: fit-content;
+    }
+
+    section.gump-desc > article > div:not(.title) > div:first-child div.text a:hover{
+        font-style: italic;
+    }
+
+    section.gump-desc > article > div:not(.title) > div > h3{
+        font-size: 32px;
+        padding-top: 40px;
+        padding-bottom: 180px;
+        padding-right: 80px;
+        line-height: 1.5;
+        text-align: right;
+        padding-right: 20px;
+    }
+
+    section.insurance-desc{
+        height: unset;
+    }
+
+    section.insurance-desc article{
+        padding: 80px;
+    }
+
+    section.insurance-desc > article > div.title{
+        display: flex;
+        font-size: 18px;
+        align-items: center;
+        gap: 8px;
+        align-self: flex-start;
+    }
+
+    section.insurance-desc h4{
+        font-size: 24px;
+        font-weight: 500;
+        padding-bottom: 8px;
+    }
+
+    section.insurance-desc p{
+        font-size: 18px;
+    }
+
+    section.insurance-desc > article > .learn-more{
+        width: calc( 100% - 80px );
+        margin-top: 60px;
+        background: #fff;
+        padding: 40px;
+        font-size: 24px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        border-radius: 18px;
+        color: #101010;
+        box-shadow: 1px 1px 20px #00000010;
+    }
+
+    section.insurance-desc > article > .learn-more p{
+        font-weight: 500;
+        font-size: 22px;
+    }
+
+    section.insurance-desc > article > a:not(.learn-more){
+        font-size: 16px;
+        text-decoration: none;
+        color: #101010;
+        text-align: right;
+        width: calc( 100% - 100px );
+        margin-top: 20px;
+        color:#676767;
+    }
+
+    section.insurance-desc > article > a:not(.learn-more):hover{
+        font-style: italic;
+    }
+
+
+    section.pet-sitter-desc{
+        height: unset;
+    }
+
+    section.pet-sitter-desc > article{
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 80px;
+        position: relative;
+        gap: 40px;
+    }
+
+    section.pet-sitter-desc > article > div.title{
+        display: flex;
+        font-size: 18px;
+        align-items: center;
+        gap: 8px;
+    }
+
+    section.pet-sitter-desc > article > div.grid-box{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    section.pet-sitter-desc > article > div.grid-box  div.card{
+        background: #fff;
+        height: 100%;
+        padding: 40px 40px 60px 40px;
+        border-radius: 14px;
+        box-shadow: 1px 1px 20px #00000010;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 1.5;
+        gap: 40px;  
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    section.pet-sitter-desc > article > div.grid-box  div.card h4{
+        font-size: 24px;
+    }
+
+    section.pet-sitter-desc > article > div.grid-box  div.card p{
+        text-align: right;
+        color: #555;
+    }
+
+    section.pet-sitter-desc > article > div.flex-box{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        gap: 40px;
+    }
+
+    section.pet-sitter-desc > article > div.flex-box .card{
+        border-radius: 14px;
+        box-shadow: 1px 1px 20px #00000005;
+        padding: 40px;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    section.pet-sitter-desc > article > div.flex-box .card p{
+        color: #fff;
+        
+    }
+
+    section.pet-sitter-desc > article > div.flex-box .card:first-child{
+        background: #ffbc00;
+        width: 283px;
+    }
+
+    section.pet-sitter-desc > article > div.flex-box .card:last-child{
+        background: #101010;
+        width: 298px;
+        
+    }
+
+    section.pet-sitter-desc > article > div.flex-box .card p:last-child{
+        display: none;
+    }
+
 
 
     /* footer */
@@ -248,7 +446,7 @@
         </div>
     </nav>
     <div class="company-desc">
-        <section class="Introduce">
+        <!-- <section class="Introduce">
             <h2>Introduce</h2>
             <article>
                 <h3>
@@ -256,61 +454,148 @@
                     <br>더 건강한 반려동물 시장을 개척해나가는, 대한민국 1등 반려동물 플랫폼 펫트너 입니다.
                 </h3>
             </article>
-        </section>
+        </section> -->
         <section class="services">
-            <h2>보호자의 걱정을 해소하는 우리는 펫트너 입니다.</h2>
+            <h2>브랜딩 포인트</h2>
             <article>
                 <div>
-                    <p>구름이는 나보다 더 빨리 늙을텐데</p>
-                    <p>엥두가 나 없을때 현관문만 보고 있으면 어쩌지?</p>
-                    <p>강아지 보험, 보험비도 비싸고 치료비도 비싸고</p>
-                    <p>고봉이를 속속들이 아는 주치의가 필요해 !</p>
-                    <p>매일 사고치는 우리 보리, 활동량이 부족한 건 아닐까?</p>
-                    <p>사모예드는 피부가 약하다는데..</p>
-                    <p>몽글이는 미용만 갔다오면 풀이 죽어있어</p>
-                    <p>우리집에 남이 들어오는 건 싫지만, 펫시팅은 맡겨야해 !</p>
-                    <p>집을 비워야하는데 초코는 어디 맡기지?</p>
+                    <div class="health">
+                        <p>구름이는 나보다 더 빨리 늙을텐데</p>
+                        <p>오래 건강하게 함께 살기위해서 ! 건강검진 !</p>
+                    </div>
+                    <div class="pet-sitter">
+                        <p>엥두가 나 없을때 현관문만 보고 있으면 어쩌지?</p>
+                        <p>외로운 털뭉치가 걱정된다면 ? 방문 돌봄 !</p>
+                    </div>
+                    <div class="health">
+                        <p>팻보험 이용료도 비싸지만 치료비도 걱정되고</p>
+                        <p>강아지 병원비 미리 준비하고 싶다면 ? 펫트너 치료비 지원 !</p>
+                    </div>
+                    <div class="health">
+                        <p>고봉이를 속속들이 아는 주치의가 필요해 !</p>
+                        <p>반려동물의 머리부터 발끝까지 검진하자 ! 건강검진 !</p>
+                    </div>
+                    <div class="pet-sitter">
+                        <p>매일 사고치는 우리 보리, 활동량이 부족한 건 아닐까?</p>
+                        <p>한 번의 산책으로 부족해보인다면 ? 방문 돌봄 !</p>
+                    </div>
+                    <div class="health">
+                        <p>사모예드는 피부가 약하다는데..</p>
+                        <p>특히 신경써줄 부분이 궁금하다면 ? 건강검진 !</p>
+                    </div>
+                    <div class="pet-sitter">
+                        <p>몽글이는 미용만 갔다오면 풀이 죽어있어</p>
+                        <p>예민한 반려동물을 위해서 준비했어요. 방문 미용 !</p>
+                    </div>
+                    <div class="pet-sitter">
+                        <p>우리집에 남이 들어오는 건 싫지만, 펫시팅은 맡겨야해 !</p>
+                        <p>펫시터의 집에서 돌봐주는 위탁 돌봄 !</p>
+                    </div>
+                    <div class="pet-sitter">
+                        <p>집을 비워야하는데 초코는 어디 맡기지?</p>
+                        <p>믿고 맡길 수 있는 펫시터들이 모여있어요! 펫트너 돌봄 !</p>
+                    </div>
                     <div class="main-text">
-                        <h4>서비스 니즈</h4>
-                        <h3>서비스 이름</h3>
+                        <h4>Love your Pet, Live your Life</h4>
+                        <h3>걱정은 펫트너에게 맡기세요 !</h3>
                     </div>
                 </div>
             </article>
         </section>
-        <section class="increased-buisness">
-            <h2>회사 성장 / 성과</h2>
+        <section class="gump-desc">
+            <h2>검프 2.0 소개</h2>
             <article>
+                <div class="title">
+                    <i class="fa-solid fa-stethoscope"></i>
+                    <h3>
+                        검프 2.0
+                    </h3>
+                </div>
                 <div>
-                    <h3>팻트너는<br>반려동물 산업의<br>새로운 역사를 쓰고 있습니다.</h3>
                     <div>
-                        <h4>라이프스타일 슈퍼앱</h4>
-                        <p>앱 다운로드 0,000 이상</p>
-                        <h4>펫트너의 서비스와 함께한 반려동물</h4>
-                        <p>0,000마리 이상, 매달 00% 상승</p>
-                        <h4>검프 2.0을 사용하는 수의사</h4>
-                        <p>매달 00% 상승</p>
+                        <div class="mockup-image">
+                            검프 2.0 목업
+                        </div>
+                        <div class="text">
+                            <p>털뭉치 건강관리의 핵심은</p>
+                            <p>주기적인 건강검진</p>
+                            <p>편리하게 예약하고 스마트하게 검토하세요</p>
+                            <a href="gump.html">더 알아보기</a>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    그래프 / 통계 이미지
+                    <div>
+                        <h3>끙끙 아플 일 없이<br>미리 건강검진</h3>
+                        <div class="mockup-image">
+                            검프 2.0 목업
+                        </div>
+                    </div>
                 </div>
             </article>
         </section>
-        <section class="news">
-            <h2>언론보도</h2>
+        <section class="insurance-desc">
+            <h2>검프 연계 치료비 지원 소개</h2>
             <article>
-                <div>
-                    <h3>기사이름</h3>
+                <div class="title">
+                    <i class="fa-solid fa-shield-heart"></i>
+                    <h3>
+                        치료비 지원 서비스
+                    </h3>
                 </div>
-                <div>
-                    <h3>기사이름</h3>
+                <img src="https://petner.kr/images/landing/health-check/3D_icon/icon_3d_bill.png" alt="" width="440px" height="440px">
+                <h4>전국 모든 병원에서 받은 치료비를 보장 받을 수 있는 치료비 지원 서비스</h4>
+                <p>건강검진을 받은 반려견은 DB손해보험과 업무 제휴를 맺어 만들어진 치료비 지원 서비스를 1년동안 받을 수 있어요.</p>
+                <a href="insurance.html" class="learn-more">
+                    <p>
+                        자세히 보기
+                    </p>
+                    <i class="fa-solid fa-angle-right"></i>
+                </a>
+                <a href="insurance.html#renewal">갱신 때문에 방문하셨나요 ?</a>
+            </article>
+        </section>
+        <section class="pet-sitter-desc">
+            <h2>펫시팅/방문미용 소개</h2>
+            <article>
+                <div class="title">
+                    <i class="fa-solid fa-paw"></i>
+                    <h3>
+                        펫시팅 | 방문미용
+                    </h3>
                 </div>
-                <div>
-                    <h3>기사이름</h3>
+                <div class="grid-box">
+                    <div class="card">
+                        <h4>믿고 맡길 수 있는<br/>펫시터를 찾고 있나요?</h4>
+                        <p>펫트너의 엄격한 절차를 통과한<br/>펫시터를 만나보세요 !</p>
+                    </div>
+                    <div class="card">
+                        <h4>
+                            펫시팅도<br/>상황에 따라 달라야하니까
+                        </h4>
+                        <p>방문 돌봄, 위탁 돌봄 방문 미용까지<br/>펫트너 어플로 다양한 서비스를<br/>간편하게 이용해보세요</p>
+                    </div>
                 </div>
-                <div>
-                    <h3>기사이름</h3>
+                <div class="flex-box">
+                    <a class="card" href="petsitter.html">
+                        <p>
+                            펫트너 어플이 더 궁금하다면 ?
+                        </p>
+                        <p>
+                            자세히 보기
+                        </p>
+                    </a>
+                    <a class="card">
+                        <p>펫트너 어플 바로 사용해볼까요 ?</p>
+                        <p>
+                            바로 다운로드 받기
+                        </p>
+                    </a>
                 </div>
+            </article>
+        </section>
+        <section>
+            <h2>브랜딩 포인트 2</h2>
+            <article>
+                <h3>진짜 전문가들이 함께하니까 !</h3>
             </article>
         </section>
     </div>
@@ -321,7 +606,11 @@
         <div>
             <div>
                 <a>개인정보 처리방침</a>
+                <span> | </span>
+                <a href="insurance.html">펫트너 건강검진 패키지</a>
+                <span> | </span>
                 <a href="./petsitter.html">펫시터 지원</a>
+                <span> | </span>
                 <a href="./gumpParter.html">검프 파트너 센터</a>
             </div>
         </div>
@@ -338,10 +627,26 @@
 
 <script>
 
-console.log(document.querySelector("section.services article div"));
+$("section.services > article > div div:not(.main-text)").each(function(){
+    $(this).on("mouseenter",function(){
+        $(this).find("p:first-child").hide();
+        $(this).find("p:last-child").show();
+    })
+    $(this).on("mouseleave",function(){
+        $(this).find("p:first-child").show();
+        $(this).find("p:last-child").hide();
+    })
+});
 
-document.querySelector("section.services > article > div p").addEventListener("click",function(){
-    console.log(this);
-})
+$("section.pet-sitter-desc > article > div.flex-box .card").each(function(){
+    $(this).on("mouseenter",function(){
+        $(this).find("p:first-child").hide();
+        $(this).find("p:last-child").show();
+    })
+    $(this).on("mouseleave",function(){
+        $(this).find("p:first-child").show();
+        $(this).find("p:last-child").hide();
+    })
+});
 
 </script>
